@@ -20,6 +20,61 @@
     </div>
 
 </div>
+<div class="id"></div>
+<div class="name"></div>
+<div class="brewery_type"></div>
+<div class="street"></div>
+<div class="city"></div>
+<div class="state"></div>
+<div class="postal_code"></div>
+<div class="country"></div>
+<div class="longitude"></div>
+<div class="latitude"></div>
+<div class="phone"></div>
+<div class="website_url"></div>
+<div class="updated_at"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+  
+  // Here we are building the URL we need to query the database
+  var queryURL = "https://api.openbrewerydb.org/breweries";
     
+
+  // Here we run our AJAX call to the OpenWeatherMap API
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  })
+    // We store all of the retrieved data inside of an object called "response"
+    .then(function(response) {
+
+      // Log the queryURL
+      console.log(queryURL);
+
+      // Log the resulting object
+      console.log(response);
+
+      // Transfer content to HTML
+      $(".id").text("id: " + response.id);
+      $(".name").text("name: " + response.name);
+ //     $(".brewery_type").text("brewery type " + response.brewery_type);
+      $(".street").text("street" + response.street);
+      $(".city").text("city" + response.city);
+      $(".state").text("state" + response.state);
+      $(".postal_code").text("postal code" + response.postal_code);
+      $(".country").text("country" + response.country);
+      $(".longitude").text("longitude" + response.longitude);
+      $(".latitude").text("latitude" + response.latitude);
+      $(".phone").text("phone" + response.phone);
+      $(".website_url").text("website" + response.website_url);
+     
+
+      // Log the data in the console as well
+      console.log("id: " + response.id);
+      console.log("name: " + response.name);
+  //    console.log("brewery type " + response.main.brewery_type);
+    });
+</script>   
 </body>
 </html>
