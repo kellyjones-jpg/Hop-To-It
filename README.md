@@ -22,6 +22,8 @@ AJAX Call - APIs
 Search function
 Modal Pop up (with info from APIs, taplist from API, link to directions, link to the brewery website)
 
+Adding new issue
+
 
 
 
