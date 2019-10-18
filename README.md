@@ -9,6 +9,21 @@ As a user who likes to drink beer
 I want to locate a brewery with my preferences for beer and location
 So I can have a good brewery experience
 
+APIs
+Open Brewery DB
+Tap List
+Google Maps
+GeoJS geolocation finder
+
+Breakdown of Tasks
+HTML Outline
+CSS Styling - materialize
+AJAX Call - APIs
+Search function
+Modal Pop up (with info from APIs, taplist from API, link to directions, link to the brewery website)
+
+
+
 
 
 
