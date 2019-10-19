@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+</head>
+
+
+<body>
+   <div id="map" style="width: 500px; height: 400px; display: none;"></div>
+   <button id="button" h= "39.8" v= "-104.8">view map</button>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+
+var map;
+var la= 39.7392
+var ln= -104.9903
+var initMap = function() {
+    map = new google.maps.Map(document.getElementById("map"), {
+       center: {lat: la, lng: ln},
+       zoom: 15
+   });
+   var marker = new google.maps.Marker({
+   position: {lat: la, lng: ln},
+   map: map
+ });
+}
+
+$("#button").on("click", function(){
+  la= parseFloat($(this).attr("h"), 10);
+  ln= parseFloat($(this).attr("v"), 10);
+  (document.getElementById("map")).style.display = "block";
+  map = new google.maps.Map(document.getElementById("map"), {
+       center: {lat: la, lng: ln},
+       zoom: 15
+   });
+   var marker = new google.maps.Marker({
+   position: {lat: la, lng: ln},
+   map: map
+ });
+});
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP6OXI1t3xgoiRrS2RrYY-pmOjKYFnyNU&callback=initMap" async defer></script>
+</body>
