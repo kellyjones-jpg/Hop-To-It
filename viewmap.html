@@ -8,6 +8,13 @@
 
 
 <body>
+
+      <form class="form">
+            <input class="" type="search" id="search-input" placeholder="Search">
+            <button class= "" type="submit" id="search">Search</button>
+        </form>
+
+
    <div id="map" style="width: 500px; height: 400px; display: none;"></div>
    <button id="button" h= "39.8" v= "-104.8">view map</button>
 
@@ -19,6 +26,7 @@
 var map;
 var la= 39.7392
 var ln= -104.9903
+
 var initMap = function() {
     map = new google.maps.Map(document.getElementById("map"), {
        center: {lat: la, lng: ln},
@@ -42,6 +50,37 @@ $("#button").on("click", function(){
    position: {lat: la, lng: ln},
    map: map
  });
+});
+
+////////////////////////beer api/////////////////////////
+
+$("#search").on('click', function () {
+    event.preventDefault();
+    // console.log("button was clicked");
+
+    var cityInput = $('#search-input').val();
+    // cityInput = cityInput.split(' ');
+    // cityInput = cityInput.join('-');
+    console.log("city input: " + cityInput);
+
+var APIkey = "cd3220993a88c09168f7e658ad27b100";
+var beerQuery ="http://beermapping.com/webservice/loccity/" + APIkey + "/" + cityInput + "&s=json";
+var mapQuery = "https://beermapping.com/?lat=41.91034&lon=-87.67597&z=5"
+
+console.log("beer query url: " + beerQuery);
+
+$.ajax({
+      url: beerQuery,
+      method: "GET"
+    }).then(function (response) {
+
+      console.log("ajax working");
+      console.log(response);
+      console.log(response[0].id.name);
+      console.log(beerQuery);
+
+    });
+
 });
 
 </script>
