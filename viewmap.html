@@ -6,7 +6,6 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 </head>
 
-
 <body>
 
       <form class="form">
@@ -14,11 +13,10 @@
             <button class= "" type="submit" id="search">Search</button>
         </form>
 
+        <div id="brewery-list"></div>
 
    <div id="map" style="width: 500px; height: 400px; display: none;"></div>
    <button id="button" h= "39.8" v= "-104.8">view map</button>
-
-
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
@@ -63,25 +61,69 @@ $("#search").on('click', function () {
     // cityInput = cityInput.join('-');
     console.log("city input: " + cityInput);
 
+
 var APIkey = "cd3220993a88c09168f7e658ad27b100";
-var beerQuery ="http://beermapping.com/webservice/loccity/" + APIkey + "/" + cityInput + "&s=json";
+var breweryQuery ="http://beermapping.com/webservice/loccity/" + APIkey + "/" + cityInput + "&s=json";
 var mapQuery = "https://beermapping.com/?lat=41.91034&lon=-87.67597&z=5"
 
-console.log("beer query url: " + beerQuery);
-
+//call brewery API
 $.ajax({
-      url: beerQuery,
+      url: breweryQuery,
       method: "GET"
     }).then(function (response) {
 
-      console.log("ajax working");
-      console.log(response);
-      console.log(response[0].id.name);
-      console.log(beerQuery);
+      for(var i = 0; i < 20; i++ ){
+         
+         //get random brewery
+         var rb = response[Math.floor(Math.random() * response.length)];
+
+         //random brewery address
+         var rbAddress = (rb.street + " " + rb.city + " " + rb.state);
+
+         //random brewery website
+         var URLstring = ""
+         var URLstring = JSON.stringify(rb.url);
+         var newURLstring = URLstring.substring(1, URLstring.length);
+         var rbURL = '<a target= "blank" href="https://' + newURLstring +  ">visit their website</a>" ;
+
+         //console log random brewery info
+         console.log("Name: " + rb.name + " | URL: " + rb.url + " | Address: " + rbAddress);
+
+         $("#brewery-list").append(rb.name + " | " + rbAddress + " | " + rbURL + "<br>");
+
+         /////////////////////////////google geocoding API////////////////////
+         googleAPIkey = "AIzaSyAP6OXI1t3xgoiRrS2RrYY-pmOjKYFnyNU"
+         geocodeURL = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway+Mountain+View+CA&key=" + googleAPIkey;
+
+         rbAddress = rbAddress.split(' ');
+         rbAddress = rbAddress.join('+');
+         console.log("hopefully this worked+++++++++: " + rbAddress)
+         breweryGeocodeURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + rbAddress + "&key=" + googleAPIkey;
+
+         console.log(geocodeURL);
+
+         $.ajax({
+               url: breweryGeocodeURL,
+               method: "GET"
+            }).then(function (response) {
+               console.log("google geocode api working: " + breweryGeocodeURL);
+
+
+
+            });
+
+            
+
+         }
 
     });
 
 });
+
+
+
+
+
 
 </script>
 
