@@ -1,15 +1,17 @@
-.container 
-{
-margin-top: 5%;
-border: solid;
-border-width: 1.2px;
-border-color: darkgray;
-}
-
-body, html {
+html {
     height: 100%;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
   }
 
   .hero-image {
@@ -49,4 +51,13 @@ body, html {
 
   #search-input {
     color: white;
+    font-weight: bold;
+    font-size: 20pt;
+  }
+
+  #map {
+    margin: 5%;
+    margin-left: 35%;
+    border: solid;
+    border-color: darkgray;
   }
