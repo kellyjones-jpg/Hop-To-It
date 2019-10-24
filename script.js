@@ -61,12 +61,12 @@ $.ajax({
          var URLstring = ""
          var URLstring = JSON.stringify(rb.url);
          var newURLstring = URLstring.substring(1, URLstring.length);
-         var rbURL = '<a target= "blank" href="https://' + newURLstring +  ">visit their website</a>" ;
+         var rbURL = '<a target= "blank" href="https://' + newURLstring +  ">Visit Website</a>" ;
 
          //console log random brewery info
          console.log("Name: " + rb.name + " | URL: " + rb.url + " | Address: " + rbAddress);
 
-         $("#brewery-list").append(rb.name + " | " + rbAddress + " | " + rbURL + "<br>");
+         $("#brewery-list").append(rb.name + "<br>" + rbAddress + " | " + rbURL + "<br>");
 
          /////////////////////////////google geocoding API////////////////////
          googleAPIkey = "AIzaSyAP6OXI1t3xgoiRrS2RrYY-pmOjKYFnyNU"
