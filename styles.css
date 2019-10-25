@@ -13,7 +13,7 @@ html {
 
   main {
     flex: 1 0 auto;
-    background-color: darkgray;
+    background-color: silver;
   }
 
   a {
@@ -22,7 +22,6 @@ html {
   }
 
   a:hover {
-    color: rgb(46, 194, 180);
     font-weight: bold;
   }
 
@@ -75,32 +74,31 @@ html {
   /* } */
 
   .styledDiv {
-    background-color: purple;
-  }
-
-  .antiStyledDiv {
-
+    background-color: gainsboro;
+    padding-bottom: 1%;
+    padding-top: 1%;
   }
 
   .link {
-    color: rgb(46, 194, 180);
+    color: #7F6000;
   }
 
   .link:hover {
-    color: white;
+    color: rgb(46, 194, 180);
   }
 
   #brewery-list {
-    background-color: darkgray;
+    background-color: silver;
     padding-left: 5%;
+    padding-right: 5%;
     padding-top: 2%;
     padding-bottom: 2%;
   }
 
   .header {
-
+    padding-left: 1%;
   }
 
   .paragraph {
-
+    padding-left: 3%;
   }
