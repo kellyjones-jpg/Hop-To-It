@@ -1,6 +1,9 @@
 var map;
 var la= 39.7392
 var ln= -104.9903
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
 
 var initMap = function() {
     map = new google.maps.Map(document.getElementById("map"), {
@@ -13,7 +16,7 @@ var initMap = function() {
  });
 }
 
-$("#button").on("click", function(){
+$("#myBtn").on("click", function(){
   la= parseFloat($(this).attr("h"), 10);
   ln= parseFloat($(this).attr("v"), 10);
   (document.getElementById("map")).style.display = "block";
@@ -26,6 +29,20 @@ $("#button").on("click", function(){
    map: map
  });
 });
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 ////////////////////////beer api/////////////////////////
 
