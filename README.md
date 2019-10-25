@@ -1,28 +1,19 @@
-# Hop-To-It
-Title - "Hop To It" a brewery directory
+Hop-To-It
 
-Proposal/Project Description
-Hop To It is an app that a user can interact with to find a Brewery based on their location. The user will have an option to search based on the IP address geolocation, or city. After the user searches, the app will populate a list of Breweries that are nearby. The user can then click on a brewery to get a pop up modal that gives a link to the brewery's website, a link to google maps directions, and a "tap list" generated from the taplist API.
+Project Description
+"Hop To It" is an application that is based around the enjoyment of craft beers and selected marijuana strains, a popular combination in several cities across America. When the user enters a city name into the search box, the program generates a randomized list of 30 breweries that are in that city. Each brewery list item includes the address, the website, and a button to view the google marker map location. Along with researching breweries with craft beer options, the user can browse marijuana strains and their effects.
 
 User Story:
-As a user who likes to drink beer
-I want to locate a brewery with my preferences for beer and location
-So I can have a good brewery experience
+As a user who enjoys brweries, craft beers and marijuana
+I want to receive information about breweries in my area, and marijuana options
+So I can find a brewery and marijuana strain with my prefferred experience in mind.
 
-APIs
-Open Brewery DB
-Tap List
-Google Maps
-GeoJS geolocation finder
+As a user who is having someone visit, or is visiting a city with all the wonders of craft beers and marijuana selections available,
+I want to find a brewery and marijuana strain with my or our preferences,
+So I can have an experience that matches my/our mood and preferences.
 
-Breakdown of Tasks
-HTML Outline
-CSS Styling - materialize
-AJAX Call - APIs
-Search function
-Modal Pop up (with info from APIs, taplist from API, link to directions, link to the brewery website)
 
-Adding new issue
+APIs: Beermapping.com (Brewery API) | Strains.evanbusse.com (Marijuana strains API) | Google Geocode | Google Maps Javascript
 
 
 
