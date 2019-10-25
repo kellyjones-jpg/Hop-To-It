@@ -1,26 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-</head>
-
-<body>
-
-      <form class="form">
-            <input class="" type="search" id="search-input" placeholder="Search">
-            <button class= "" type="submit" id="search">Search</button>
-        </form>
-
-        <div id="brewery-list"></div>
-
-   <div id="map" style="width: 500px; height: 400px; display: none;"></div>
-   <button id="button" h= "39.8" v= "-104.8">view map</button>
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script>
-
 var map;
 var la= 39.7392
 var ln= -104.9903
@@ -84,12 +61,32 @@ $.ajax({
          var URLstring = ""
          var URLstring = JSON.stringify(rb.url);
          var newURLstring = URLstring.substring(1, URLstring.length);
-         var rbURL = '<a target= "blank" href="https://' + newURLstring +  ">visit their website</a>" ;
+         var rbURL = 'https://' + newURLstring;
+         
+        //  $("<div>", {id: 'foo', class: 'a', }).appendTo("#box");
+         if(i % 2 == 0) 
+         {
+          var newDiv = $("<div>", {class: "styledDiv"});
+         } 
+         else 
+         {
+          var newDiv = $("<div>", {class: "antiStyledDiv"});
+         }
+         
+         var newH = $("<h4>", {class: "header"}).text(rb.name);
+         var newA = $("<a>", {target:"_blank", href: rbURL, class: "link"}).text("visit website");
+         var newP = $("<p>", {class: "paragraph"}).text(rbAddress + " | ");
+         newP.append(newA);
+
+         newDiv.append(newH, newP);
+         $("#brewery-list").append(newDiv);
+
 
          //console log random brewery info
          console.log("Name: " + rb.name + " | URL: " + rb.url + " | Address: " + rbAddress);
 
-         $("#brewery-list").append(rb.name + " | " + rbAddress + " | " + rbURL + "<br>");
+
+        //  $("#brewery-list").append(rb.name + "<br>" + rbAddress + " | " + rbURL + "<br>");
 
          /////////////////////////////google geocoding API////////////////////
          googleAPIkey = "AIzaSyAP6OXI1t3xgoiRrS2RrYY-pmOjKYFnyNU"
@@ -119,13 +116,3 @@ $.ajax({
     });
 
 });
-
-
-
-
-
-
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP6OXI1t3xgoiRrS2RrYY-pmOjKYFnyNU&callback=initMap" async defer></script>
-</body>
