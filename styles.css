@@ -8,11 +8,22 @@ html {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-color:  darkgray;
   }
 
   main {
     flex: 1 0 auto;
     background-color: darkgray;
+  }
+
+  a {
+    color: #555;
+    font-weight: bold;
+  }
+
+  a:hover {
+    color: rgb(46, 194, 180);
+    font-weight: bold;
   }
 
   .hero-image {
@@ -72,7 +83,7 @@ html {
   }
 
   .link {
-    color: teal;
+    color: rgb(46, 194, 180);
   }
 
   .link:hover {
