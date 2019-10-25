@@ -12,6 +12,7 @@ html {
 
   main {
     flex: 1 0 auto;
+    background-color: darkgray;
   }
 
   .hero-image {
@@ -55,9 +56,40 @@ html {
     font-size: 20pt;
   }
 
-  #map {
+  /* #map {
     margin: 5%;
     margin-left: 35%;
     border: solid;
-    border-color: darkgray;
+    border-color: darkgray; */
+  /* } */
+
+  .styledDiv {
+    background-color: purple;
+  }
+
+  .antiStyledDiv {
+
+  }
+
+  .link {
+    color: teal;
+  }
+
+  .link:hover {
+    color: white;
+  }
+
+  #brewery-list {
+    background-color: darkgray;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .header {
+
+  }
+
+  .paragraph {
+
   }

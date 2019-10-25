@@ -61,12 +61,32 @@ $.ajax({
          var URLstring = ""
          var URLstring = JSON.stringify(rb.url);
          var newURLstring = URLstring.substring(1, URLstring.length);
-         var rbURL = '<a target= "blank" href="https://' + newURLstring +  ">visit their website</a>" ;
+         var rbURL = 'https://' + newURLstring;
+         
+        //  $("<div>", {id: 'foo', class: 'a', }).appendTo("#box");
+         if(i % 2 == 0) 
+         {
+          var newDiv = $("<div>", {class: "styledDiv"});
+         } 
+         else 
+         {
+          var newDiv = $("<div>", {class: "antiStyledDiv"});
+         }
+         
+         var newH = $("<h4>", {class: "header"}).text(rb.name);
+         var newA = $("<a>", {target:"_blank", href: rbURL, class: "link"}).text("visit website");
+         var newP = $("<p>", {class: "paragraph"}).text(rbAddress + " | ");
+         newP.append(newA);
+
+         newDiv.append(newH, newP);
+         $("#brewery-list").append(newDiv);
+
 
          //console log random brewery info
          console.log("Name: " + rb.name + " | URL: " + rb.url + " | Address: " + rbAddress);
 
-         $("#brewery-list").append(rb.name + "<br>" + rbAddress + " | " + rbURL + "<br>");
+
+        //  $("#brewery-list").append(rb.name + "<br>" + rbAddress + " | " + rbURL + "<br>");
 
          /////////////////////////////google geocoding API////////////////////
          googleAPIkey = "AIzaSyAP6OXI1t3xgoiRrS2RrYY-pmOjKYFnyNU"
