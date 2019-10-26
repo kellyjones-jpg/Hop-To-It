@@ -34,6 +34,16 @@ html {
     height: 500px;
     width: auto;
   }
+
+  .hero-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("smoke.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 500px;
+    width: auto;
+  }
   
   .hero-text {
     text-align: center;
@@ -133,3 +143,4 @@ html {
     text-decoration: none;
     cursor: pointer;
   }
+
