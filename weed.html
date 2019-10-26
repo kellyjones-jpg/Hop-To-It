@@ -47,10 +47,10 @@
   <br>
   <!-- Button to generate images -->
   <div class="row">
-      <div class="col s9 m7">
+      <div class="col s12 m7">
         <div class="card">
           <div class="card-content">
-            <p>Got the giggles? Generate 3 stoner gifs below. It'd be pretty cool if you did.</p>
+              <div id="gifs-appear-here"></div>
           </div>
           <div class="card-action">
               <button data-pot="weed" class="waves-effect waves-light btn">GIPHY Nugs</button>  
@@ -63,7 +63,7 @@
       
       <!-- where gif images appear  -->
     
-        <div id="gifs-appear-here"></div>
+        <!-- <div id="gifs-appear-here"></div> -->
 
         </main>
     
@@ -115,14 +115,14 @@
       
       // Looping through each item in the array and logging a message to the console.
 
-      var potName = $("<h1>").text("Strain Name: " + oneStrain);
-      var potmedical = $("<h3>").text("Medicine for: " + response[oneStrain].effects.medical.join(" , "));
-      var potnegative = $("<h3>").text("Negative Effects: " + response[oneStrain].effects.negative.join(" , "));
-      var potpostive = $("<h3>").text("Postive Effects: " + response[oneStrain].effects.positive.join(" , "));
-      var potId = $("<h3>").text("Strain ID: " + response[oneStrain].id);
-      var potFlavors = $("<h3>").text("Flavor: " + response[oneStrain].flavors.join(" , "));
-      var potEffects = $("<h3>").text(response.potEffects);
-      var potRace = $("<h3>").text("Race: " + response[oneStrain].race);      
+      var potName = $("<h4>").text("Strain Name: " + oneStrain);
+      var potmedical = $("<p>").text("Medicine for: " + response[oneStrain].effects.medical.join(" , "));
+      var potnegative = $("<p>").text("Negative Effects: " + response[oneStrain].effects.negative.join(" , "));
+      var potpostive = $("<p>").text("Postive Effects: " + response[oneStrain].effects.positive.join(" , "));
+      var potId = $("<p>").text("Strain ID: " + response[oneStrain].id);
+      var potFlavors = $("<p>").text("Flavor: " + response[oneStrain].flavors.join(" , "));
+      var potEffects = $("<p>").text(response.potEffects);
+      var potRace = $("<p>").text("Race: " + response[oneStrain].race);      
       
 
       // Empty the contents of the pot-div, append the new pot content
